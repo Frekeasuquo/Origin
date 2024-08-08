@@ -49,7 +49,9 @@ const Page = async ({ params }: PageProps,) => {
     ({ value }) => value === product.category
   )?.label;
 
+  // @ts-expect-error
   const validUrls = product.images
+    // @ts-expect-error
     .map(({ image }) => (typeof image === "string" ? image : image.url))
     .filter(Boolean) as string[];
 
@@ -85,14 +87,18 @@ const Page = async ({ params }: PageProps,) => {
             </ol>
 
             <div className="mt-4">
+              
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                {/* @ts-expect-error*/}
                 {product.name}
               </h1>
+              
             </div>
 
             <section className="mt-4">
               <div className="flex items-center">
                 <p className="font-medium text-gray-900">
+                  {/* @ts-expect-error*/}
                   {formatPrice(product.price)}
                 </p>
 
@@ -103,6 +109,7 @@ const Page = async ({ params }: PageProps,) => {
 
               <div className="mt-4 space-y-6">
                 <p className="text-base text-muted-foreground">
+                  {/* @ts-expect-error*/}
                   {product.description}
                 </p>
               </div>
@@ -130,6 +137,7 @@ const Page = async ({ params }: PageProps,) => {
           <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
             <div>
               <div className="mt-10">
+                {/* @ts-expect-error*/}
                 <AddToCartButton product={product} />
               </div>
               <div className="mt-6 text-center">
@@ -150,6 +158,7 @@ const Page = async ({ params }: PageProps,) => {
 
       <ProductReel
         href="/products"
+        // @ts-expect-error
         query={{ category: product.category, limit: 4 }}
         title={`Similar ${label}`}
         subtitle={`Browse similar high-quality ${label} just like '${product.name}'`}

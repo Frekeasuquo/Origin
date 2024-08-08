@@ -9,10 +9,18 @@ import Image from "next/image";
 import { useCart } from "@/hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
     const { items } = useCart();
     const itemCount = items.length;
+
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, [])
+
     const fee = 1
 
     const cartTotal = items.reduce((total, {product}) => (
@@ -29,13 +37,13 @@ const Cart = () => {
                 <span 
                     className="ml-2 text-sm font-meduim text-gray-700 group-hover:text-gray-800"
                 >
-                    0
+                    { isMounted ? itemCount : 0}
                 </span>
             </SheetTrigger>
             <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
                 <SheetHeader className="space-y-2.5 pr-6">
                     <SheetTitle>
-                        Cart (0)
+                        Cart ({itemCount})
                     </SheetTitle>
                 </SheetHeader>
                 {itemCount > 0 ? (
