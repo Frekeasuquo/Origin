@@ -129,7 +129,7 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
                     payload.logger.info('Next.js started');
                     app.listen(PORT, function () { return __awaiter(void 0, void 0, void 0, function () {
                         return __generator(this, function (_a) {
-                            payload.logger.info("\n                Next.js App URL: ".concat(process.env.NEXT_PUBLIC_SERVER_URL, "    \n            "));
+                            payload.logger.info("\n                Next.js App URL: ".concat(process.env.NEXTAUTH_URL, "    \n            "));
                             return [2 /*return*/];
                         });
                     }); });
