@@ -135,7 +135,7 @@ var stripeWebhookHandler = function (req, res) { return __awaiter(void 0, void 0
             case 6:
                 data = _c.sent();
                 res.status(200).json({ data: data });
-                console.log(data);
+                
                 return [3 /*break*/, 8];
             case 7:
                 error_1 = _c.sent();

@@ -115,7 +115,6 @@ exports.paymentRouter = (0, trpc_1.router)({
                     return [2 /*return*/, { url: stripeSession.url }];
                 case 6:
                     err_1 = _c.sent();
-                    console.log(err_1);
                     return [2 /*return*/, { url: null }];
                 case 7: return [2 /*return*/];
             }

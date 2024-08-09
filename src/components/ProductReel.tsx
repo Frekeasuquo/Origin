@@ -40,7 +40,6 @@ const ProductReel = (props: ProductReelProps) => {
             map = new Array<null>(query.limit ?? FALLBACK_LIMIT).fill(null);
         }
 
-        console.log('abc', products)
 
     return (
         <section className="py-12">
