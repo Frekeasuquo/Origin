@@ -8,7 +8,7 @@ export const getServerSideUser = async (
     const token = cookies.get('payload-token')?.value
 
     const meRes = await fetch(
-        `${process.env.NEXTAUTH_URL}/api/users/me`,
+        `${process.env.NEXTAUTH_SECRET}/api/users/me`,
         {
         headers: {
             Authorization: `JWT ${token}`,

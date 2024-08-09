@@ -15,7 +15,7 @@ dotenv.config({
 });
 
 export default buildConfig({
-  serverURL: process.env.NEXTAUTH_URL|| "",
+  serverURL: process.env.NEXTAUTH_SECRET|| "",
   collections: [Users, Products, Media, ProductFiles, Orders],
   routes: {
     admin: "/sell",

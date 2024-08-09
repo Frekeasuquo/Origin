@@ -18,7 +18,7 @@ dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, "../.env"),
 });
 exports.default = (0, config_1.buildConfig)({
-    serverURL: process.env.NEXTAUTH_URL || "",
+    serverURL: process.env.NEXTAUTH_SECRET || "",
     collections: [Users_1.Users, Products_1.Products, Media_1.Media, ProductFile_1.ProductFiles, Orders_1.Orders],
     routes: {
         admin: "/sell",

@@ -49,7 +49,7 @@ var ReceiptEmail = function (_a) {
             React.createElement(components_1.Container, { style: container },
                 React.createElement(components_1.Section, null,
                     React.createElement(components_1.Column, null,
-                        React.createElement(components_1.Img, { src: "".concat(process.env.NEXTAUTH_URL, "/hippo-email-sent.png"), width: '100', height: '100', alt: 'DigitalHippo' })),
+                        React.createElement(components_1.Img, { src: "".concat(process.env.NEXTAUTH_SECRET, "/hippo-email-sent.png"), width: '100', height: '100', alt: 'DigitalHippo' })),
                     React.createElement(components_1.Column, { align: 'right', style: tableCell },
                         React.createElement(components_1.Text, { style: heading }, "Receipt"))),
                 React.createElement(components_1.Section, { style: informationTable },
@@ -76,7 +76,7 @@ var ReceiptEmail = function (_a) {
                             product.description ? (React.createElement(components_1.Text, { style: productDescription }, product.description.length > 50
                                 ? ((_a = product.description) === null || _a === void 0 ? void 0 : _a.slice(0, 50)) + '...'
                                 : product.description)) : null,
-                            React.createElement(components_1.Link, { href: "".concat(process.env.NEXTAUTH_URL, "/thank-you?orderId=").concat(orderId), style: productLink }, "Download Asset")),
+                            React.createElement(components_1.Link, { href: "".concat(process.env.NEXTAUTH_SECRET, "/thank-you?orderId=").concat(orderId), style: productLink }, "Download Asset")),
                         React.createElement(components_1.Column, { style: productPriceWrapper, align: 'right' },
                             React.createElement(components_1.Text, { style: productPrice }, (0, utils_1.formatPrice)(product.price)))));
                 }),

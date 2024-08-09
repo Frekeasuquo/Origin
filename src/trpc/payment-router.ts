@@ -69,8 +69,8 @@ export const paymentRouter = router({
             try {
                 const stripeSession =
                     await stripe.checkout.sessions.create({
-                        success_url: `${process.env.NEXTAUTH_URL}/thank-you?orderId=${order.id}`,
-                        cancel_url: `${process.env.NEXTAUTH_URL}/cart`,
+                        success_url: `${process.env.NEXTAUTH_SECRET}/thank-you?orderId=${order.id}`,
+                        cancel_url: `${process.env.NEXTAUTH_SECRET}/cart`,
                         payment_method_types: ['card'],
                         mode: 'payment',
                         metadata: {

@@ -10,7 +10,7 @@ const Providers = ({ children}: PropsWithChildren) => {
     const [trpcClient] = useState(() => trpc.createClient({
         links: [
             httpBatchLink({
-                url: `${process.env.NEXTAUTH_URL}/api/trpc`,
+                url: `${process.env.NEXTAUTH_SECRET}/api/trpc`,
                 fetch(url, options) {
                     return fetch(url, {
                         ...options,
