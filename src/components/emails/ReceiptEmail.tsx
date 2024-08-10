@@ -46,7 +46,7 @@ export const ReceiptEmail = ({
                 <Section>
                 <Column>
                     <Img
-                      src={`${process.env.NEXTAUTH_SECRET}/hippo-email-sent.png`}
+                      src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`}
                       width='100'
                       height='100'
                       alt='DigitalHippo'
@@ -128,7 +128,7 @@ export const ReceiptEmail = ({
                         </Text>
                     ) : null}
                     <Link
-                        href={`${process.env.NEXTAUTH_SECRET}/thank-you?orderId=${orderId}`}
+                        href={`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${orderId}`}
                         style={productLink}>
                         Download Asset
                     </Link>

@@ -9,10 +9,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
+
 interface PageProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
-  };
+  }
 }
 
 const ThankYouPage = async ({ searchParams }: PageProps) => {
@@ -34,18 +35,19 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
 
   const [order] = orders;
 
+
   if (!order) return notFound();
 
+
   
-  const orderUserId =
-    {/* @ts-expect-error*/}
-    typeof order.user === "string" ? order.user : order.user.id;
+  const orderUserId = typeof order.user === "string" ? order.user : order.user.id
 
   if (orderUserId !== user?.id) {
     return redirect(`/sign-in?origin=thank-you?orderId=${order.id}`);
   }
 
   const products = order.products as Product[];
+  
 
   const orderTotal = products.reduce((total, product) => {
     return total + product.price;
@@ -78,7 +80,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                 to{" "}
                 {typeof order.user !== "string" ? (
                   <span className="font-medium text-gray-900">
-                    {/* @ts-expect-error*/}
+                    
                     {order.user.email}
                   </span>
                 ) : null}
@@ -164,10 +166,10 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
               </div>
 
               <PaymentStatus
-                // @ts-expect-error
+                
                 isPaid={order._isPaid}
                 orderEmail={(order.user as User).email}
-                // @ts-expect-error
+                
                 orderId={order.id}
               />
 

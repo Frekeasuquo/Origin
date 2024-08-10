@@ -32,7 +32,7 @@ export const Users: CollectionConfig = {
     //     return PrimaryActionEmailHtml({
     //         actionLabel: "verify your account",
     //         buttonText: "Verify Account",
-    //         href: `${process.env.NEXTAUTH_SECRET}/verify-email?token=${token}`
+    //         href: `${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}`
     //     })
     //     },
     // },
