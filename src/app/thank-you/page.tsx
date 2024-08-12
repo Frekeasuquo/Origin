@@ -3,7 +3,7 @@ import { PRODUCT_CATEGORIES } from "../../config";
 import { getPayloadClient } from "../../get-payload";
 import { getServerSideUser } from "../../lib/payload-utils";
 import { formatPrice } from "../../lib/utils";
-import { Product, ProductFile, User } from "../../payload-types";
+import { Order, Product, ProductFile, User } from "../../payload-types";
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
   const { user } = await getServerSideUser(nextCookies);
   const payload = await getPayloadClient();
 
-  const { docs: orders } = await payload.find({
+  const { docs} = await payload.find({
     collection: "orders",
     depth: 2,
     where: {
@@ -33,6 +33,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
     },
   });
 
+  const orders = docs as unknown as Order[];
   const [order] = orders;
 
 
